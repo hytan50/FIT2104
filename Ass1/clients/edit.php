@@ -1,14 +1,49 @@
 <?php
-  include("../connection.php");
-  $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-  $query = "SELECT * FROM client WHERE client_id = ?";
+  require_once("../config.php");
 
+  $query = "SELECT * FROM client WHERE client_id = ?";
   $pquery = $conn->prepare($query);
   $pquery->bind_param("i", $client_id);
-  $client_id = $_GET['id'];
+  $client_id = $_GET["id"];
   $pquery->execute();
   $result = $pquery->get_result();
   $row = $result->fetch_assoc();
+
+  if (isset($_POST["action"]) && $_POST["action"] == "update") {
+    // TODO: Run update query and print success
+    $query = "UPDATE client
+      SET first_name = ?,
+      last_name = ?,
+      address_street = ?,
+      address_suburb = ?,
+      address_state = ?,
+      address_postcode = ?,
+      email = ?,
+      phone = ?,
+      is_subscribed = ?
+      WHERE client_id = ?";
+    $pquery = $conn->prepare($query);
+    $pquery->bind_param(
+      "ssssssssii",
+      $_POST["first_name"],
+      $_POST["last_name"],
+      $_POST["address_street"],
+      $_POST["address_suburb"],
+      $_POST["address_state"],
+      $_POST["address_postcode"],
+      $_POST["email"],
+      $_POST["phone"],
+      $_POST["is_subscribed"],
+      $client_id
+    );
+    $pquery->execute();
+
+    echo "Update Success";
+  } else if (isset($_POST["action"]) && $_POST["action"] == "delete") {
+    // TODO: Run delete query and print success
+    echo "Delete Success";
+  }
+  else {
 ?>
 
 <h1>Update Client Details</h1>
@@ -73,4 +108,8 @@
     </tr>
   </table>
 
+<input type="hidden" name="action" value="update">
 </form>
+<?php
+}
+?>

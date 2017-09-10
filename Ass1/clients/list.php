@@ -1,6 +1,6 @@
 <?php
-  include("../connection.php");
-  $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+  require_once("../config.php");
+
   $query = "SELECT * FROM client";
   $result = $conn->query($query);
 ?>
