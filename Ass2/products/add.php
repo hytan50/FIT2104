@@ -1,6 +1,15 @@
 <?php
 require_once("../config.php");
 if (isset($_POST["action"]) && $_POST["action"] == "add") {
+
+  // Create the product record
+  $query = "INSERT INTO product (name, cost_price, sale_price, country_of_origin) VALUES (?, ?, ?, ?)";
+  $pquery = $conn->prepare($query);
+  $pquery->bind_param('sdds', $_POST["name"], $_POST["cost_price"], $_POST["sale_price"], $_POST["country_of_origin"]);
+  $pquery->execute();
+  $product_id = $conn->insert_id;
+
+  // Upload the images
   foreach($_FILES["images"]["tmp_name"] as $key=>$tmp_name){
       $temp = $_FILES["images"]["tmp_name"][$key];
       $name = $_FILES["images"]["name"][$key];
@@ -10,7 +19,12 @@ if (isset($_POST["action"]) && $_POST["action"] == "add") {
           break;
       }
 
+      // Move to directory and save reference in DB
       move_uploaded_file($temp, SITE_ROOT."/product_images/".$name);
+      $query = "INSERT INTO product_image (name, product_id) VALUES (?, ?)";
+      $pquery = $conn->prepare($query);
+      $pquery->bind_param('si', $name, $product_id);
+      $pquery->execute();
   }
 }
 ?>
