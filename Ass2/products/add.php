@@ -26,6 +26,9 @@ if (isset($_POST["action"]) && $_POST["action"] == "add") {
       $pquery->bind_param('si', $name, $product_id);
       $pquery->execute();
   }
+
+  // Success! Redirect to list view.
+  header("Location: list.php");
 }
 ?>
 <html>
