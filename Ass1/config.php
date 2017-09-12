@@ -1,5 +1,6 @@
 <?php
   define("PRODUCTION", false);
+  define("SITE_ROOT", realpath(dirname(__FILE__)));
 
   if (PRODUCTION == true) {
     // Production DB settings
@@ -10,10 +11,10 @@
     $db_port = 3306;
   } else {
     // Local settings (MAMP)
-    $db_user = 'root';
-    $db_pass = 'root';
-    $db_name = 's24201596';
-    $db_host = 'localhost';
+    $db_user = "root";
+    $db_pass = "root";
+    $db_name = "s24201596";
+    $db_host = "localhost";
     $db_port = 8889;
   }
 
