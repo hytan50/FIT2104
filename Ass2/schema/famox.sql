@@ -51,8 +51,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `s24201596`.`product` (
   `product_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NULL DEFAULT NULL,
-  `cost_price` DECIMAL(2) NULL DEFAULT NULL,
-  `sale_price` DECIMAL(2) NULL DEFAULT NULL,
+  `cost_price` DECIMAL(8,2) NULL DEFAULT NULL,
+  `sale_price` DECIMAL(8,2) NULL DEFAULT NULL,
   `country_of_origin` VARCHAR(40) NULL DEFAULT NULL,
   PRIMARY KEY (`product_id`))
 ENGINE = InnoDB;
