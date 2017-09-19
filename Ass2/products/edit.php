@@ -5,24 +5,31 @@
   // When a form has been submitted
   switch($_POST["action"]) {
     case "update":
-      updateClient($_POST);
+      updateProduct($_POST);
+
+      // Upload and link the product images to the product
+      $images = $_FILES["images"];
+      createProductImages($_POST["id"], $images);      
 
       // Success! Redirect to list view.
       header("Location: list.php");
       break;
 
     case "confirm_delete":
-      deleteClient($_POST["id"]);
+      deleteProduct($_POST["id"]);
 
       // Success! Redirect to list view.
       header("Location: list.php");
       break;
   }
 
+
+
   // Set context and include the header, content and footer.
-  $pageTitle = "Edit Client";
-  $pageSection = "clients";
-  $client = getClient($_GET["id"]);
+  $pageTitle = "Edit Product";
+  $pageSection = "products";
+  $product = getProduct($_GET["id"]);
+  $product_images = getProductImages($_GET["id"]);
   include_once("../includes/header.php");
   include_once("includes/edit_form.php");
   include_once("../includes/footer.php");

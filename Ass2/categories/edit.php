@@ -5,14 +5,14 @@
   // When a form has been submitted
   switch($_POST["action"]) {
     case "update":
-      updateClient($_POST);
+      updateCategory($_POST);
 
       // Success! Redirect to list view.
       header("Location: list.php");
       break;
 
     case "confirm_delete":
-      deleteClient($_POST["id"]);
+      deleteCategory($_POST["id"]);
 
       // Success! Redirect to list view.
       header("Location: list.php");
@@ -20,9 +20,9 @@
   }
 
   // Set context and include the header, content and footer.
-  $pageTitle = "Edit Client";
-  $pageSection = "clients";
-  $client = getClient($_GET["id"]);
+  $pageTitle = "Edit Category";
+  $pageSection = "categories";
+  $category = getCategory($_GET["id"]);
   include_once("../includes/header.php");
   include_once("includes/edit_form.php");
   include_once("../includes/footer.php");
