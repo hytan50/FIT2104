@@ -2,6 +2,15 @@
 
 <footer class="footer">
   <div class="container-fluid">
+    <p class="pull-left">
+      <a
+        class="btn btn-info btn-round"
+        href="../show_source.php?filename=<?php echo str_replace("/Ass2/", "", $_SERVER["SCRIPT_NAME"]); ?>"
+        target="_blank"
+      >
+        <i class="material-icons">code</i> Show Source
+      </a>
+    </p>
     <p class="copyright pull-right">
       &copy; <script>document.write(new Date().getFullYear())</script> Team T25
     </p>
