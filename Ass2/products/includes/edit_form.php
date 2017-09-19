@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
       <form method="post" action="">
         <input type="hidden" name="id" value="<?php echo $product["id"]; ?>" />
         <input type="hidden" name="action" value="delete" />
@@ -65,21 +65,51 @@
               </div>
             </div>
 
+            <?php if ($product_images->num_rows > 0) { ?>
+              <table class="table">
+                <thead class="text-primary">
+                  <th>Image</th>
+                  <th>Delete</th>
+                </thead>
+                <tbody>
+                <?php while ($row = $product_images->fetch_array()) { ?>
+                  <tr>
+                    <td>
+                      <img src="../product_images/<?php echo $row["name"] ?>" class="img-thumbnail">
+                    </td>
+                    <td>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="delete_image[]" value="<?php echo $row["id"] ?>">
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                <?php } ?>
+                </tbody>
+              </table>
+            <?php } ?>
+
             <table class="table">
               <thead class="text-primary">
-                <th>Image</th>
-                <th>Delete</th>
+                <th>Category</th>
+                <th></th>
               </thead>
               <tbody>
-              <?php while ($row = $product_images->fetch_array()) { ?>
+              <?php while ($row = $product_categories->fetch_array()) { ?>
                 <tr>
                   <td>
-                    <img src="../product_images/<?php echo $row["name"] ?>" class="img-thumbnail">
+                    <?php echo $row["name"] ?>
                   </td>
                   <td>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="delete_image[]" value="<?php echo $row["id"] ?>">
+                        <input
+                          type="checkbox"
+                          name="category[]"
+                          value="<?php echo $row["id"] ?>"
+                          <?php echo (($row["checked"] == 1) ? " checked" : "") ?>
+                        >
                       </label>
                     </div>
                   </td>
@@ -87,7 +117,6 @@
               <?php } ?>
               </tbody>
             </table>
-
 
             <input type="hidden" name="action" value="update" />
             <input type="hidden" name="id" value="<?php echo $product["id"]; ?>" />

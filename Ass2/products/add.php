@@ -17,6 +17,7 @@
   // Set context and include the header, content and footer.
   $pageTitle = "Add Product";
   $pageSection = "products";
+  $product_categories = getProductCategories(null);
   include_once("../includes/header.php");
   include_once("includes/add_form.php");
   include_once("../includes/footer.php");

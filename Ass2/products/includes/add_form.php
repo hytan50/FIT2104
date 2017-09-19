@@ -57,6 +57,33 @@
               </div>
             </div>
 
+            <table class="table">
+              <thead class="text-primary">
+                <th>Category</th>
+                <th></th>
+              </thead>
+              <tbody>
+              <?php while ($row = $product_categories->fetch_array()) { ?>
+                <tr>
+                  <td>
+                    <?php echo $row["name"] ?>
+                  </td>
+                  <td>
+                    <div class="checkbox">
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="category[]"
+                          value="<?php echo $row["id"] ?>"
+                        >
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              <?php } ?>
+              </tbody>
+            </table>
+
             <input type="hidden" name="action" value="add" />
             <button type="submit" class="btn btn-success pull-right">Add Product</button>
             <a href="list.php" class="btn pull-right">Back</a>

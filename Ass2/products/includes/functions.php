@@ -17,6 +17,22 @@
 
 
   /**
+   * Get a list of all categories and their relation to a given product
+   */
+  function getProductCategories($product_id) {
+    global $conn;
+    $query = "SELECT id, name, !ISNULL(product_id) AS checked
+      FROM category LEFT JOIN product_category
+      ON category.id = product_category.category_id
+      AND product_category.product_id = ?";
+    $pquery = $conn->prepare($query);
+    $pquery->bind_param("i", $product_id);
+    $pquery->execute();
+    return $pquery->get_result();
+  }
+
+
+  /**
    * Create a product and get its ID
    */
   function createProduct($data) {
@@ -33,7 +49,16 @@
       $data["country_of_origin"]
     );
     $pquery->execute();
-    return $conn->insert_id;
+    $product_id = $conn->insert_id;
+
+    // Create product categories
+    if (isset($data["category"])) {
+      foreach ($data["category"] as $key => $id) {
+        createProductCategory($product_id, $id);
+      }
+    }
+
+    return $product_id;
   }
 
 
@@ -42,11 +67,25 @@
    */
   function updateProduct($data) {
     global $conn;
+    $product_id = $data["id"];
 
     // Delete product images
     if (isset($data["delete_image"])) {
       foreach ($data["delete_image"] as $key => $id) {
         deleteProductImage($id);
+      }
+    }
+
+    // Update product categories
+    if (isset($data["category"])) {
+      // Delete all categories from the product
+      $query = "DELETE FROM product_category WHERE product_id = ?";
+      $pquery = $conn->prepare($query);
+      $pquery->bind_param("i", $product_id);
+      $pquery->execute();
+
+      foreach ($data["category"] as $key => $id) {
+        createProductCategory($product_id, $id);
       }
     }
 
@@ -62,6 +101,19 @@
       $data["id"]
     );
     return $pquery->execute();
+  }
+
+
+  /**
+   * Create a relationship between a product and a category
+   */
+  function createProductCategory($product_id, $category_id) {
+    global $conn;
+    $query = "INSERT INTO product_category (product_id, category_id) VALUES (?, ?)";
+    $pquery = $conn->prepare($query);
+    $pquery->bind_param('ii', $product_id, $category_id);
+    $pquery->execute();
+    return $conn->insert_id;
   }
 
 
