@@ -4,11 +4,12 @@
 
 - [ ] Login
 - [ ] Logout
+- [ ] Proper error checking
 - [ ] Homepage
 - [ ] Export clients to PDF
 - [ ] Filter products by category
-- [ ] Project Page
 - [ ] Update product prices in bulk
-- [x] Update product's categories
 - [ ] "Display PHP Code" (add to Footer)
 - [ ] Documentation page
+- [x] Project Page
+- [x] Update product's categories
