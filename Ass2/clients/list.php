@@ -31,6 +31,7 @@
               <th>ID</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Subscribed</th>
               <th>Actions</th>
             </thead>
             <tbody>
@@ -39,6 +40,17 @@
                 <td><?php echo $row["id"]; ?></td>
                 <td><?php echo $row["first_name"]; ?></td>
                 <td><?php echo $row["last_name"]; ?></td>
+                <td>
+                  <?php if ($row["is_subscribed"]) { ?>
+                    <span class="text-success">
+                      <i class="material-icons">check_circle</i>
+                    </span>
+                  <?php } else { ?>
+                    <span class="text-danger">
+                      <i class="material-icons">remove_circle</i>
+                    </span>
+                  <?php } ?>
+                </td>
                 <td>
                   <a href="edit.php?id=<?php echo $row["id"]; ?>">
 										<button type="button" rel="tooltip" title="" class="btn btn-primary btn-simple btn-xs" data-original-title="Edit">
