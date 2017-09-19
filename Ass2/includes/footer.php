@@ -5,7 +5,7 @@
     <p class="pull-left">
       <a
         class="btn btn-info btn-round"
-        href="../show_source.php?filename=<?php echo str_replace("/Ass2/", "", $_SERVER["SCRIPT_NAME"]); ?>"
+        href="../show_source.php?filename=<?php echo str_replace("/24201596", "", str_replace("/Ass2/", "", $_SERVER["SCRIPT_NAME"])); ?>"
         target="_blank"
       >
         <i class="material-icons">code</i> Show Source
