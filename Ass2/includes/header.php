@@ -59,6 +59,12 @@
               <p>Categories</p>
             </a>
           </li>
+					<li <?php echo (($pageSection == "images") ? "class=\"active\"" : "") ?>>
+            <a href="../products/images.php">
+              <i class="material-icons">photo_library</i>
+              <p>Images</p>
+            </a>
+          </li>
 					<li <?php echo (($pageSection == "projects") ? "class=\"active\"" : "") ?>>
             <a href="../projects/list.php">
               <i class="material-icons">work</i>
