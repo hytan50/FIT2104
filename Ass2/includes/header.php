@@ -1,3 +1,7 @@
+<?php
+	require_once("../functions.php");
+	auth_redirect();
+?>
 <!doctype html>
 <html lang="en">
 <head>

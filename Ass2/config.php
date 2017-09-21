@@ -1,6 +1,7 @@
 <?php
   define("PRODUCTION", false);
   define("SITE_ROOT", realpath(dirname(__FILE__)));
+  define("ADMIN_HOMEPAGE", "clients/list.php");  // TODO: Change this to dashboard.php
 
   if (PRODUCTION == true) {
     // Production DB settings
