@@ -1,4 +1,10 @@
 --
+-- Dumping data for table `admin`
+--
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+  (1, 'harry', 'd3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791');
+
+--
 -- Dumping data for table `project`
 --
 INSERT INTO `project` (`id`, `description`, `country`, `city`) VALUES
@@ -26,12 +32,36 @@ INSERT INTO `product` (`id`, `name`, `cost_price`, `sale_price`, `country_of_ori
   (1, 'Small Blue T-shirt', '3.99', '20.00', 'China'),
   (2, 'Medium Blue T-shirt', '3.99', '20.00', 'China'),
   (3, 'Large Blue T-shirt', '3.99', '20.00', 'China'),
-  (4, 'Small White Skirt', '4.50', '25.00', 'China'),
-  (5, 'Medium White Skirt', '4.50', '25.00', 'China'),
+  (4, 'Small White Dress', '4.50', '25.00', 'China'),
+  (5, 'Medium White Dress', '4.50', '25.00', 'China'),
   (6, 'Black Hat', '6.00', '15.00', 'India'),
   (7, 'White Hat', '6.00', '15.00', 'India'),
   (8, 'Asia Map', '5.50', '13.00', 'Phillipines'),
   (9, 'Africa Map', '5.50', '13.00', 'Phillipines');
+
+--
+-- Dumping data for table `product_image`
+--
+INSERT INTO `product_image` (`id`, `name`, `product_id`) VALUES
+  (1, 'blue-tee-back.png', 1),
+  (2, 'blue-tee-front.png', 1),
+  (3, 'blue-tee-side.png', 1),
+  (4, 'blue-tee-back.png', 2),
+  (5, 'blue-tee-front.png', 2),
+  (6, 'blue-tee-side.png', 2),
+  (7, 'blue-tee-back.png', 3),
+  (8, 'blue-tee-front.png', 3),
+  (9, 'blue-tee-side.png', 3),
+  (10, 'white-dress-back.png', 4),
+  (11, 'white-dress-front.png', 4),
+  (12, 'white-dress-side.png', 4),
+  (13, 'white-dress-back.png', 5),
+  (14, 'white-dress-front.png', 5),
+  (15, 'white-dress-side.png', 5),
+  (16, 'black-hat.png', 6),
+  (17, 'white-hat.png', 7),
+  (18, 'asia-map.png', 8),
+  (19, 'africa-map.png', 9);
 
 --
 -- Dumping data for table `product_category`
