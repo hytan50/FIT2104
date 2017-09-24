@@ -28,7 +28,12 @@
       if ($login_success) {
 
         // Login success! Redirect to the admin.
-        $redirect_uri = $_SESSION["destinationURL"] ?? ADMIN_HOMEPAGE;
+        if (isset($_SESSION["destinationURL"])){
+            $redirect_uri = $_SESSION["destinationURL"];
+        }
+        else{
+            $redirect_uri = ADMIN_HOMEPAGE;
+        }
         unset($_SESSION['destinationURL']);  // no longer required
         header("Location: " . $redirect_uri);
         break;
