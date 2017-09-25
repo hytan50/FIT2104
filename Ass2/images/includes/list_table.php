@@ -15,7 +15,7 @@
     <div class="col-md-12">
       <form method="post" action="">
         <button class="btn btn-danger btn-round pull-right" type="submit">
-          <i class="material-icons">add</i>Delete Images
+          <i class="material-icons">delete</i> Delete Selected Images
           <div class="ripple-container"></div>
         </button>
         <div class="card">
@@ -63,7 +63,7 @@
           </div>
         </div>
         <button class="btn btn-danger btn-round pull-right" type="submit">
-          <i class="material-icons">add</i>Delete Images
+          <i class="material-icons">delete</i> Delete Selected Images
           <div class="ripple-container"></div>
         </button>
       </form>

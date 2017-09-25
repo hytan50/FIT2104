@@ -8,8 +8,10 @@
   $pageSection = "images";
   include_once("../includes/header.php");
 
-  // Render the table
+  // Delete images if applicable
   $messages = bulkDeleteImages($_POST);
+
+  // Render the table
   include_once("includes/list_table.php");
   $conn->close();
 
