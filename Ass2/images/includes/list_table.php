@@ -4,7 +4,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <form method="post" action="delete.php">
+        <?php
+          foreach ($messages as $message) {
+            echo $message;
+          }
+        ?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post" action="">
         <button class="btn btn-danger btn-round pull-right" type="submit">
           <i class="material-icons">add</i>Delete Images
           <div class="ripple-container"></div>
@@ -29,7 +38,7 @@
                       // TODO: Validate file extensions too.
                       continue;
                     }
-                    $image_record = getProductDescription($filename);
+                    $image_record = getImageByName($filename);
                 ?>
                   <tr>
                     <td><img src="../product_images/<?php echo $filename; ?>" class="img-thumbnail img-list"></td>
@@ -44,7 +53,7 @@
                       ?>
                     </td>
                     <td>
-                      <input type="checkbox" name="check[]" value="<?php echo $filename ?>">
+                      <input type="checkbox" name="delete_image[]" value="<?php echo $filename ?>">
                     </td>
                   </tr>
                 <?php } ?>

@@ -8,14 +8,14 @@
       updateCategory($_POST);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
 
     case "confirm_delete":
       deleteCategory($_POST["id"]);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
   }
 

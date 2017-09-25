@@ -9,6 +9,7 @@
   include_once("../includes/header.php");
 
   // Render the table
+  $messages = bulkDeleteImages($_POST);
   include_once("includes/list_table.php");
   $conn->close();
 

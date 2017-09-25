@@ -28,7 +28,7 @@
             <input type="hidden" name="id" value="<?php echo $category["id"]; ?>" />
             <input type="hidden" name="action" value="update" />
             <button type="submit" class="btn btn-primary pull-right">Update Category</button>
-            <a href="list.php" class="btn pull-right">Back</a>
+            <a href="." class="btn pull-right">Back</a>
             <div class="clearfix"></div>
           </form>
         </div>

@@ -12,14 +12,14 @@
       createProductImages($_POST["id"], $images);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
 
     case "confirm_delete":
       deleteProduct($_POST["id"]);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
   }
 
