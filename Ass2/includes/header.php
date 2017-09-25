@@ -64,7 +64,7 @@
             </a>
           </li>
 					<li <?php echo (($pageSection == "images") ? "class=\"active\"" : "") ?>>
-            <a href="../products/images.php">
+            <a href="../images/list.php">
               <i class="material-icons">photo_library</i>
               <p>Images</p>
             </a>

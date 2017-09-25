@@ -13,4 +13,6 @@
   $result->free();
   $conn->close();
   include_once("../includes/footer.php");
+
+  // TODO: Delete this file
 ?>
