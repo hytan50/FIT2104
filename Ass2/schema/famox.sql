@@ -8,19 +8,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema s24201596
+-- Table `client`
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema s24201596
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `s24201596` DEFAULT CHARACTER SET utf8 ;
-USE `s24201596` ;
-
--- -----------------------------------------------------
--- Table `s24201596`.`client`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`client` (
+CREATE TABLE IF NOT EXISTS `client` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(50) NOT NULL,
   `last_name` VARCHAR(50) NOT NULL,
@@ -36,9 +26,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`category`
+-- Table `category`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -46,9 +36,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`product`
+-- Table `product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`product` (
+CREATE TABLE IF NOT EXISTS `product` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NULL DEFAULT NULL,
   `cost_price` DECIMAL(8,2) NULL DEFAULT NULL,
@@ -59,9 +49,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`product_category`
+-- Table `product_category`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`product_category` (
+CREATE TABLE IF NOT EXISTS `product_category` (
   `category_id` INT NOT NULL,
   `product_id` INT NOT NULL,
   PRIMARY KEY (`category_id`, `product_id`),
@@ -69,21 +59,21 @@ CREATE TABLE IF NOT EXISTS `s24201596`.`product_category` (
   INDEX `fk_product_category_product1_idx` (`product_id` ASC),
   CONSTRAINT `fk_product_category_category`
     FOREIGN KEY (`category_id`)
-    REFERENCES `s24201596`.`category` (`id`)
+    REFERENCES `category` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_product_category_product`
     FOREIGN KEY (`product_id`)
-    REFERENCES `s24201596`.`product` (`id`)
+    REFERENCES `product` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`admin`
+-- Table `admin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(50) NOT NULL,
   `password` VARCHAR(256) NOT NULL,
@@ -92,9 +82,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`product_image`
+-- Table `product_image`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`product_image` (
+CREATE TABLE IF NOT EXISTS `product_image` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(40) NOT NULL,
   `product_id` INT NOT NULL,
@@ -102,16 +92,16 @@ CREATE TABLE IF NOT EXISTS `s24201596`.`product_image` (
   INDEX `fk_product_image_product_idx` (`product_id` ASC),
   CONSTRAINT `fk_product_image_product`
     FOREIGN KEY (`product_id`)
-    REFERENCES `s24201596`.`product` (`id`)
+    REFERENCES `product` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `s24201596`.`project`
+-- Table `project`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `s24201596`.`project` (
+CREATE TABLE IF NOT EXISTS `project` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(100) NOT NULL,
   `country` VARCHAR(50) NULL DEFAULT NULL,
