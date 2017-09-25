@@ -6,8 +6,7 @@
   $pageSection = "images";
   include_once("../includes/header.php");
 
-  $filepath = "../product_images";
-  $dir = opendir($filepath);
+  $image_dir = opendir(SITE_ROOT."/product_images/");
 ?>
 
 <div class="container-fluid">
@@ -25,11 +24,11 @@
                 <th>Thumbnail</th>
                 <th>Image Name</th>
                 <th>Product</th>
-                <th>Checked</th>
+                <th>Delete</th>
               </thead>
               <tbody>
                 <?php
-                  while($filename = readdir($dir)){
+                  while($filename = readdir($image_dir)){
                     if ($filename == "." || $filename == ".."){
                       // TODO: Validate file extensions too.
                       continue;
@@ -48,7 +47,7 @@
                         }
                       ?>
                     </td>
-                    <td align="center">
+                    <td>
                       <input type="checkbox" name="check[]" value="<?php echo $filename ?>">
                     </td>
                   </tr>
@@ -58,15 +57,10 @@
 
           </div>
         </div>
-        <!--
-        <a href="delete.php">
-          <button class="btn btn-success btn-round">
-            <i class="material-icons">add</i> Delete images
-            <div class="ripple-container"></div>
-          </button>
-        </a>
-        -->
-        <input name="delete" type="submit" value="Delete">
+        <button class="btn btn-danger btn-round pull-right" type="submit">
+          <i class="material-icons">add</i>Delete Images
+          <div class="ripple-container"></div>
+        </button>
       </form>
     </div>
   </div>

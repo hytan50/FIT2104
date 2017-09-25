@@ -1,8 +1,8 @@
 <?php
   include_once("../config.php");
   include_once("includes/functions.php");
-  $filepath = "/Ass2/schema/images/";     //subject to change to "product_image" folder
-  //$dir = opendir($filepath);
+  $image_dir = SITE_ROOT."/product_images/";
+
   if(!empty($_POST['check'])){
     $checkbox = $_POST['check'];
     foreach ($checkbox as $check) {
@@ -19,7 +19,7 @@
 
       //delete from directory
       try {
-        unlink($_SERVER['DOCUMENT_ROOT'].$filepath.$check);
+        unlink($image_dir.$check);
         echo "<h4>".$check." has been successfully deleted."."</h4><br />";
       } catch (Exception $e){
         echo "<h4>Error: ".$e->getMessage()."</h4><br />";
