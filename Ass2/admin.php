@@ -37,8 +37,14 @@
         // TODO: Better formatting.
         $error_message = "Invalid username or password.";
       }
-
       break;
+
+    default:
+      if ($_SESSION["username"]) {
+        header("Location: " . ADMIN_HOMEPAGE);
+        break;
+      }
+
   }
 ?>
 
