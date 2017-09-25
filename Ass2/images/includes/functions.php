@@ -1,8 +1,16 @@
 <?php
   function getProductDescription($name){
-    // TODO: Reuse product function
     global $conn;
-    $query = "SELECT * FROM product_image WHERE name = ?";
+    $query = "SELECT
+        product_image.id,
+        product_image.name,
+        product_image.product_id,
+        product.name AS product_name
+      FROM
+        product_image
+      INNER JOIN product ON product_image.product_id = product.id
+      WHERE product_image.name = ?
+      LIMIT 1";
     $pquery = $conn->prepare($query);
     $pquery->bind_param("s", $name);
     $pquery->execute();

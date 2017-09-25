@@ -6,7 +6,7 @@
   $pageSection = "images";
   include_once("../includes/header.php");
 
-  $filepath = "../schema/images";     //subject to change to "product_image" folder
+  $filepath = "../product_images";
   $dir = opendir($filepath);
 ?>
 
@@ -22,35 +22,34 @@
           <div class="card-content table-responsive">
             <table class="table">
               <thead class="text-warning">
-                <th>ID</th>
-                <th>Images name</th>
-                <th>Used in product with product id</th>
+                <th>Thumbnail</th>
+                <th>Image Name</th>
+                <th>Product</th>
                 <th>Checked</th>
               </thead>
               <tbody>
                 <?php
-                  $index = 0;
-                  while($file = readdir($dir)){
-                    if ($file == "." || $file == ".."){
+                  while($filename = readdir($dir)){
+                    if ($filename == "." || $filename == ".."){
+                      // TODO: Validate file extensions too.
                       continue;
                     }
-                    $index++;
-                    $image = getProductDescription($file);
+                    $image_record = getProductDescription($filename);
                 ?>
                   <tr>
-                    <td><?php echo $index; ?></td>
-                    <td><?php echo $file; ?></td>
+                    <td><img src="../product_images/<?php echo $filename; ?>" class="img-thumbnail img-list"></td>
+                    <td><?php echo $filename; ?></td>
                     <td>
                       <?php
-                        if ($image) {
-                          echo $image["product_id"];
+                        if ($image_record) {
+                          echo "<a href=\"../products/edit.php?id=".$image_record["product_id"]."\">".$image_record["product_name"]."</a>";
                         } else {
                           echo "-";
                         }
                       ?>
                     </td>
                     <td align="center">
-                      <input type="checkbox" name="check[]" value="<?php echo $file ?>">
+                      <input type="checkbox" name="check[]" value="<?php echo $filename ?>">
                     </td>
                   </tr>
                 <?php } ?>

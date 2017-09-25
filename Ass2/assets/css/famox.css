@@ -1,3 +1,7 @@
 .custom-wrapper {
   margin-bottom: 100px;
 }
+
+.img-list {
+  max-width: 150px;
+}
