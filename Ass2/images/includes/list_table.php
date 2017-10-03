@@ -35,7 +35,11 @@
                 <?php
                   while($filename = readdir($image_dir)){
                     if ($filename == "." || $filename == ".."){
-                      // TODO: Validate file extensions too.
+                      continue;
+                    }
+                    $file_parts = pathinfo($filename);
+                    $allowedExtension = array("jpeg", "jpg", "png", "gif");
+                    if (!in_array($file_parts["extension"], $allowedExtension)){
                       continue;
                     }
                     $image_record = getImageByName($filename);
