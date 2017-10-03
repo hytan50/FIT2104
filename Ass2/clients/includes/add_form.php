@@ -82,7 +82,7 @@
             <input type="hidden" name="id" />
             <input type="hidden" name="action" value="add" />
             <button type="submit" class="btn btn-success pull-right">Create Client</button>
-            <a href="list.php" class="btn pull-right">Back</a>
+            <a href="." class="btn pull-right">Back</a>
             <div class="clearfix"></div>
           </form>
         </div>

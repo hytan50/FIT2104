@@ -46,25 +46,31 @@
             </a>
           </li>
           <li <?php echo (($pageSection == "clients") ? "class=\"active\"" : "") ?>>
-            <a href="../clients/list.php">
+            <a href="../clients/">
               <i class="material-icons">person</i>
               <p>Clients</p>
             </a>
           </li>
           <li <?php echo (($pageSection == "products") ? "class=\"active\"" : "") ?>>
-            <a href="../products/list.php">
+            <a href="../products/">
               <i class="material-icons">shopping_cart</i>
               <p>Products</p>
             </a>
           </li>
           <li <?php echo (($pageSection == "categories") ? "class=\"active\"" : "") ?>>
-            <a href="../categories/list.php">
+            <a href="../categories/">
               <i class="material-icons">label</i>
               <p>Categories</p>
             </a>
           </li>
+					<li <?php echo (($pageSection == "images") ? "class=\"active\"" : "") ?>>
+            <a href="../images/">
+              <i class="material-icons">photo_library</i>
+              <p>Images</p>
+            </a>
+          </li>
 					<li <?php echo (($pageSection == "projects") ? "class=\"active\"" : "") ?>>
-            <a href="../projects/list.php">
+            <a href="../projects/">
               <i class="material-icons">work</i>
               <p>Projects</p>
             </a>

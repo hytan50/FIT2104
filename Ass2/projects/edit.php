@@ -8,14 +8,14 @@
       updateProject($_POST);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
 
     case "confirm_delete":
       deleteProject($_POST["id"]);
 
       // Success! Redirect to list view.
-      header("Location: list.php");
+      header("Location: .");
       break;
   }
 

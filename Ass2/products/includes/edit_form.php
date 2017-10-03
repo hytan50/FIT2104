@@ -121,7 +121,7 @@
             <input type="hidden" name="action" value="update" />
             <input type="hidden" name="id" value="<?php echo $product["id"]; ?>" />
             <button type="submit" class="btn btn-primary pull-right">Update Product</button>
-            <a href="list.php" class="btn pull-right">Back</a>
+            <a href="." class="btn pull-right">Back</a>
             <div class="clearfix"></div>
           </form>
         </div>

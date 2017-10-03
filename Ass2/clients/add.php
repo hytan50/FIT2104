@@ -6,7 +6,7 @@
     createClient($_POST);
 
     // Success! Redirect to list view.
-    header("Location: list.php");
+    header("Location: .");
   }
 
   // Set context and include the header, content and footer.
