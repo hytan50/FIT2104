@@ -5,12 +5,11 @@
 - [ ] Proper error checking
 - [ ] Intermediary views for Update
 - [ ] Intermediary views for Delete
-- [ ] Homepage
 - [ ] Export clients to PDF
 - [ ] Filter products by category
-- [ ] Update product prices in bulk
-- [ ] Documentation page
-- [ ] Dashboard page
+- [x] Update product prices in bulk
+- [x] Documentation page
+- [x] Dashboard page
 - [x] Project Page
 - [x] Update product's categories
 - [x] "Display PHP Code" (add to Footer)
