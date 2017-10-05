@@ -81,6 +81,12 @@
               <p>Projects</p>
             </a>
           </li>
+					<li <?php echo (($pageSection == "docs") ? "class=\"active\"" : "") ?>>
+            <a href="../documentation/">
+              <i class="material-icons">description</i>
+              <p>Documentation</p>
+            </a>
+          </li>
         </ul>
   		</div>
 		</div>

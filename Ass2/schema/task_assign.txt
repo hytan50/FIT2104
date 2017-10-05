@@ -1,0 +1,16 @@
+Author : Sean Kozer, Hui Yee Tan
+
+Completed task by:
+1. Sean Kozer
+    - Clients Page
+    - Product Page
+    - Project Page
+    - ProductCategory Page
+
+
+2. Hui Yee Tan
+    - Category Page
+    - Product Multiple Edit Page
+    - Images Page
+    - Documentation Page
+  
