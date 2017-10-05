@@ -40,7 +40,7 @@
   		<div class="sidebar-wrapper">
 				<ul class="nav">
           <li <?php echo (($pageSection == "dashboard") ? "class=\"active\"" : "") ?>>
-            <a href="../dashboard.php">
+            <a href="../dashboard/">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -106,7 +106,7 @@
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="../admin.php?action=logout">
+								<a href="../?action=logout">
  							  	<i class="material-icons">exit_to_app</i> Logout
 		 						</a>
 							</li>

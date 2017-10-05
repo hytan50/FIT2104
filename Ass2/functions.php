@@ -4,7 +4,7 @@
   function auth_redirect() {
     if (!isset($_SESSION["username"])) {
       $_SESSION["destinationURL"] = $_SERVER["REQUEST_URI"];
-      header("Location: ../admin.php");
+      header("Location: ../");
     }
   }
 

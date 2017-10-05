@@ -8,7 +8,7 @@
       $logout_success = logout();
       if ($logout_success) {
         // Redirect back to login page.
-        header("Location: admin.php");
+        header("Location: .");
       }
       break;
 
@@ -38,7 +38,6 @@
         break;
 
       } else {
-        // TODO: Better formatting.
         $error_message = "Invalid username or password.";
       }
       break;
