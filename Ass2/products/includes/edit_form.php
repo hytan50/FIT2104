@@ -5,7 +5,7 @@
         <input type="hidden" name="id" value="<?php echo $product["id"]; ?>" />
         <input type="hidden" name="action" value="delete" />
         <button class="btn btn-danger btn-round">
-					<i class="material-icons">close</i> Delete Client
+					<i class="material-icons">close</i> Delete Product
 					<div class="ripple-container"></div>
         </button>
       </form>

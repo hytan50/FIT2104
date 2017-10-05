@@ -11,8 +11,8 @@
   $result = $conn->query($query);
 
   // Set context and include the header
-  $pageTitle = "Product Prices";
-  $pageSection = "product_prices";
+  $pageTitle = "Multiple Products";
+  $pageSection = "multiple_products";
   include_once("../includes/header.php");
 
   // List table

@@ -11,8 +11,8 @@
       </form>
       <div class="card">
         <div class="card-header" data-background-color="purple">
-          <h4 class="title">Edit Category #<?php echo $project["id"]; ?></h4>
-          <p class="category">Update details for an existing product category</p>
+          <h4 class="title">Edit Project #<?php echo $project["id"]; ?></h4>
+          <p class="category">Update details for an existing project</p>
         </div>
         <div class="card-content">
           <form method="post" action="">

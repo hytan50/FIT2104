@@ -57,10 +57,10 @@
               <p>Products</p>
             </a>
           </li>
-					<li <?php echo (($pageSection == "product_prices") ? "class=\"active\"" : "") ?>>
-            <a href="../product_prices/">
+					<li <?php echo (($pageSection == "multiple_products") ? "class=\"active\"" : "") ?>>
+            <a href="../multiple_products/">
               <i class="material-icons">attach_money</i>
-              <p>Product Prices</p>
+              <p>Multiple Products</p>
             </a>
           </li>
           <li <?php echo (($pageSection == "categories") ? "class=\"active\"" : "") ?>>
