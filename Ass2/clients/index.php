@@ -20,6 +20,12 @@
 					<div class="ripple-container"></div>
         </button>
       </a>
+        <a href="export.php">
+            <button class="btn btn-primary btn-round pull-right">
+                <i class="material-icons">file_download</i> Export Client List
+                <div class="ripple-container"></div>
+            </button>
+        </a>
       <div class="card">
         <div class="card-header" data-background-color="orange">
           <h4 class="title">Clients</h4>
