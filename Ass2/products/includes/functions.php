@@ -80,6 +80,18 @@
 
 
   /**
+   * Delete a product by ID
+   */
+  function deleteProduct($id) {
+    global $conn;
+    $query = "DELETE FROM product WHERE id = ?";
+    $pquery = $conn->prepare($query);
+    $pquery->bind_param("i", $id);
+    return $pquery->execute();
+  }
+
+
+  /**
    * Update a product using values from an associative array
    */
   function updateProduct($data) {
