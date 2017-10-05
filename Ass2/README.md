@@ -6,7 +6,7 @@
 - [ ] Intermediary views for Update
 - [ ] Intermediary views for Delete
 - [ ] Export clients to PDF
-- [ ] Filter products by category
+- [x] Filter products by category
 - [x] Update product prices in bulk
 - [x] Documentation page
 - [x] Dashboard page
