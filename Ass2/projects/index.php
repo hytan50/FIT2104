@@ -47,7 +47,7 @@
 											<i class="material-icons">edit</i>
 										</button>
                   </a>
-                  <a href="delete.php?id=<?php echo $row["id"]; ?>">
+                  <a href="delete.php?id=<?php echo $row["id"]; ?>" class="confirm-delete">
 										<button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Delete">
 											<i class="material-icons">close</i>
 										</button>

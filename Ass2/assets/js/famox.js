@@ -1,6 +1,5 @@
 type = ['','info','success','warning','danger'];
 
-
 famox = {
 
     validateForm: function(){
@@ -15,4 +14,17 @@ famox = {
       }
     }
 
-}
+};
+
+$(function() {
+
+  // Bind all links which require confirmation (i.e. Delete)
+  $("a.confirm-delete").click(function(evt) {
+    if (window.confirm("Are you sure you want to delete this record?")) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+});

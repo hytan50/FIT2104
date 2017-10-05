@@ -10,13 +10,6 @@
       // Success! Redirect to list view.
       header("Location: .");
       break;
-
-    case "confirm_delete":
-      deleteClient($_POST["id"]);
-
-      // Success! Redirect to list view.
-      header("Location: .");
-      break;
   }
 
   // Set context and include the header, content and footer.

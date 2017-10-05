@@ -1,14 +1,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-10">
-      <form method="post" action="">
-        <input type="hidden" name="id" value="<?php echo $product["id"]; ?>" />
-        <input type="hidden" name="action" value="delete" />
+      <a href="delete.php?id=<?php echo $product["id"]; ?>" class="confirm-delete">
         <button class="btn btn-danger btn-round">
 					<i class="material-icons">close</i> Delete Product
 					<div class="ripple-container"></div>
         </button>
-      </form>
+      </a>
       <div class="card">
         <div class="card-header" data-background-color="purple">
           <h4 class="title">Edit Product #<?php echo $product["id"]; ?></h4>

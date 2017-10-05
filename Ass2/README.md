@@ -4,8 +4,11 @@
 
 - [ ] Proper error checking
 - [ ] Intermediary views for Update
-- [ ] Intermediary views for Delete
 - [ ] Export clients to PDF
+- [ ] Send mail to clients
+- [ ] Show 0 results for product search
+- [x] Intermediary views for Delete
+- [x] SQL cascade delete
 - [x] Filter products by category
 - [x] Update product prices in bulk
 - [x] Documentation page
