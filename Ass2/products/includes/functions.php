@@ -33,6 +33,23 @@
 
 
   /**
+   * Search for products by partial category matches
+   */
+  function searchProductByCategory($search_term) {
+    global $conn;
+    $query = "SELECT p.*
+      FROM product_category pc
+      INNER JOIN category c ON pc.category_id = c.id
+      INNER JOIN product p ON pc.product_id = p.id
+      WHERE c.name LIKE CONCAT('%', ?, '%')";
+    $pquery = $conn->prepare($query);
+    $pquery->bind_param("s", $search_term);
+    $pquery->execute();
+    return $pquery->get_result();
+  }
+
+
+  /**
    * Create a product and get its ID
    */
   function createProduct($data) {
