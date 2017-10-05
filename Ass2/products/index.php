@@ -42,6 +42,11 @@
   </div>
   <div class="row">
     <div class="col-md-12">
+      <?php
+        if ($result->num_rows < 1) {
+          echo "<div class=\"alert alert-danger\"><span>No results match your criteria: <strong>".htmlentities($_GET["q"])."</strong></span></div>";
+        }
+      ?>
       <div class="card">
         <div class="card-header" data-background-color="orange">
           <h4 class="title">Products</h4>
