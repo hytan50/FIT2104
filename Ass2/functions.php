@@ -19,7 +19,7 @@
     if ($result->num_rows > 0)  {
       // Username and password combo exists
       $_SESSION["username"] = $username;
-      $_SESSION["password"] = $password;
+      $_SESSION["logged_in"] = true;
       return true;
 
     } else {
@@ -29,7 +29,7 @@
   }
 
   function logout(){
-    if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
+    if (isset($_SESSION["username"]) && isset($_SESSION["logged_in"])) {
       session_unset();
       session_destroy();
       return true;
