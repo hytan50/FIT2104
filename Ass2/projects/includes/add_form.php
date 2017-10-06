@@ -12,7 +12,7 @@
               <div class="col-md-12">
                 <div class="form-group label-floating">
                   <label class="control-label">Description</label>
-                  <input type="text" name="description" class="form-control" required>
+                  <input type="text" name="description" class="form-control" maxlength="100" required>
                 </div>
               </div>
             </div>
@@ -21,13 +21,13 @@
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Country</label>
-                  <input type="text" name="country" class="form-control" required>
+                  <input type="text" name="country" class="form-control" maxlength="50" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">City</label>
-                  <input type="text" name="city" class="form-control" required>
+                  <input type="text" name="city" class="form-control" maxlength="50" required>
                 </div>
               </div>
             </div>

@@ -7,12 +7,12 @@
           <p class="category">Add a product to the website</p>
         </div>
         <div class="card-content">
-          <form method="post" action="" enctype="multipart/form-data" onSubmit="return famox.validateForm();">
+          <form method="post" action="" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group label-floating">
                   <label class="control-label">Product Name</label>
-                  <input type="text" name="name" class="form-control" required>
+                  <input type="text" name="name" class="form-control" maxlength="30" required>
                 </div>
               </div>
             </div>
@@ -21,7 +21,7 @@
               <div class="col-md-12">
                 <div class="form-group label-floating">
                   <label class="control-label">Country of Origin</label>
-                  <input type="text" name="country_of_origin" class="form-control" required>
+                  <input type="text" name="country_of_origin" class="form-control" maxlength="40" required>
                 </div>
               </div>
             </div>
@@ -30,13 +30,27 @@
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Cost Price</label>
-                  <input type="text" name="cost_price" id="cost_price" class="form-control" required>
+                  <input
+                    id="cost_price"
+                    type="number"
+                    name="cost_price"
+                    class="form-control"
+                    step="0.01"
+                    required
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Sale Price</label>
-                  <input type="text" name="sale_price" id="sale_price" class="form-control" required>
+                  <input
+                    id="sale_price"
+                    type="number"
+                    name="sale_price"
+                    class="form-control"
+                    step="0.01"
+                    required
+                  >
                 </div>
               </div>
             </div>

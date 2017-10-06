@@ -12,7 +12,7 @@
               <div class="col-md-12">
                 <div class="form-group label-floating">
                   <label class="control-label">Name</label>
-                  <input type="text" name="name" class="form-control" required>
+                  <input type="text" name="name" class="form-control" maxlength="45" required>
                 </div>
               </div>
             </div>

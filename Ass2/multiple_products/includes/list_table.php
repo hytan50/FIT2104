@@ -39,11 +39,12 @@
                     <div class="input-group">
                       <span class="input-group-addon">$</span>
                       <div class="form-group">
-                        <input type="text"
+                        <input type="number"
                           name="<?php echo $row["id"]; ?>"
                           value="<?php echo $row["sale_price"]; ?>"
                           class="form-control"
-                          size="6"
+                          min="<?php echo $row["cost_price"]; ?>"
+                          step="0.01"
                         >
                         <span class="material-input"></span>
                       </div>
