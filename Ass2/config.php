@@ -1,5 +1,5 @@
 <?php
-  define("PRODUCTION", false);
+  define("PRODUCTION", true);
   define("SITE_ROOT", realpath(dirname(__FILE__)));
   define("ADMIN_HOMEPAGE", "dashboard/");
 

@@ -2,13 +2,20 @@ Author : Sean Kozer, Hui Yee Tan
 
 Completed task by:
 1. Sean Kozer
+    - Restyle login page
+    - Main Page (Dashboard)
     - Clients Page
+        - CRUD client
     - Product Page
     - Project Page
     - ProductCategory Page
 
 
 2. Hui Yee Tan
+    - Login Page
+    - Clients Page
+        - Send bulk emails to clients
+        - Export Client List to PDF
     - Category Page
     - Product Multiple Edit Page
     - Images Page

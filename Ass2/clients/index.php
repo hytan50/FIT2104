@@ -21,10 +21,16 @@
         </button>
       </a>
         <a href="export.php">
-            <button class="btn btn-primary btn-round pull-right">
-                <i class="material-icons">file_download</i> Export Client List
-                <div class="ripple-container"></div>
-            </button>
+          <button class="btn btn-primary btn-round pull-right">
+            <i class="material-icons">file_download</i> Export Client List
+            <div class="ripple-container"></div>
+          </button>
+        </a>
+        <a href="email.php">
+          <button class="btn btn-primary btn-round pull-right">
+            <i class="material-icons">send</i> Email to Client
+            <div class="ripple-container"></div>
+          </button>
         </a>
       <div class="card">
         <div class="card-header" data-background-color="orange">
