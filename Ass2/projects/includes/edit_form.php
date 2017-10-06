@@ -18,7 +18,7 @@
               <div class="col-md-12">
                 <div class="form-group label-floating">
                   <label class="control-label">Description</label>
-                  <input type="text" name="description" class="form-control" value="<?php echo $project["description"]; ?>" required>
+                  <input type="text" name="description" class="form-control" value="<?php echo $project["description"]; ?>" maxlength="100" required>
                 </div>
               </div>
             </div>
@@ -27,13 +27,13 @@
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Country</label>
-                  <input type="text" name="country" class="form-control" value="<?php echo $project["country"]; ?>" required>
+                  <input type="text" name="country" class="form-control" value="<?php echo $project["country"]; ?>" maxlength="50" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group label-floating">
                   <label class="control-label">City</label>
-                  <input type="text" name="city" class="form-control" value="<?php echo $project["city"]; ?>" required>
+                  <input type="text" name="city" class="form-control" value="<?php echo $project["city"]; ?>" maxlength="50" required>
                 </div>
               </div>
             </div>

@@ -21,6 +21,10 @@
    */
   function createClient($data) {
     global $conn;
+
+    // Clean default for subscribe boolean
+    $data["is_subscribed"] = $data["is_subscribed"] ?? 0;
+
     $query = "INSERT INTO client (
         first_name,
         last_name,
